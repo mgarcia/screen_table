@@ -3,8 +3,13 @@ $:.unshift File.expand_path("../../lib", __FILE__)
 
 require "screen_table"
 
-puts "Print product [1..n]*[1..n] (n=20) "
-ScreenTable.new(Array(1..20)).draw
+n = ARGV[0] ?  ARGV[0].to_i : 10 
 
-puts "Print Primes product n*n (n=10) "
-ScreenTable.new(MyPrimes.new.first(10)).draw
+p n
+
+
+#puts "Print product [1..n]*[1..n] (n=#{n}) "
+#ScreenTable.new(Array(1..n)).draw
+
+puts "Print the first primes product n*n (n=#{n})"
+ScreenTable.new(MyPrimes.new.first(n)).draw
